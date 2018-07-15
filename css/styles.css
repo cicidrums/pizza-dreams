@@ -1,7 +1,7 @@
 body {
   background-image: url("https://media.giphy.com/media/3eAGLn1OZ126Y/giphy.gif");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 
 .jumbotron {
@@ -13,6 +13,6 @@ h1 {
   color: #E462F6;
 }
 
-.result {
+#result {
   display: none;
 }

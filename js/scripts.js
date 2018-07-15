@@ -18,13 +18,16 @@ $(document).ready(function() {
     var size = $("#pizza-size option:selected").val();
     console.log(size);
     var toppings = parseInt($("input[name=toppings]:checked").val());
-    console.log(toppings)
-
-    var total = (size + toppings);
+    console.log(toppings);
+    var total = parseFloat(size) + parseFloat(toppings);
+    console.log(total);
     var newPizza = new Pizza(size, toppings);
 
-    $("span#cost").val(newPizza.info());
-    $(".result").append(total);
+    $("#result").text(newPizza.info());
+    console.log(newPizza);
+    $("#result").text("$" + total + ".00");
+    $("#result").show(total);
+
 
   });
 });
