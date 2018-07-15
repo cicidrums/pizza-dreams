@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -16,31 +17,33 @@
             <div class="col-md-6">
               <h6>Choose a size:</h6>
                 <form id="pizza">
-                  <select class="form-control form-control-lg" id="size">
-                    <option value="15">Cheese - Medium 12" - $15.00</option>
-                    <option value="20">Cheese - Large 16" - $20.00</option>
-                  </select><br/>
-            </div>
+                  <div class="form-group">
+                    <select class="form-control form-control-lg" id="pizza-size">
+                      <option value="15">Cheese - Medium 12" - $15.00</option>
+                      <option value="20">Cheese - Large 16" - $20.00</option>
+                    </select><br/>
+                  </div>
+              </div>
           </div>
-          <div class="row">
-            <div class="col-md-6" id="size">
-              <h6>Extra toppings add more magic:</h6>
-                  <input type="checkbox" name="toppings" value="1"> Extra Cheese + $1<br>
-                  <input type="checkbox" name="toppings" value="2"> Pepperoni + $2<br>
-                  <input type="checkbox" name="toppings" value="1"> Pineapple + $1<br>
-                  <input type="checkbox" name="toppings" value="1"> Mushrooms + $1<br>
-                  <hr/>
-                  <button type="submit">Amount due:</button>
-            </div>
-          </div>
-        </form>
 
-          <div class="result">
-            <h3 id="total"> </h3>
-              <span id="cost"></span>
+          <div class="row">
+            <div class="col-md-6">
+              <h6>Extra toppings add more magic:</h6>
+              <div class="form-group">
+                <input type="checkbox" id="toppings" name="toppings" value="1"> Extra Cheese + $1<br>
+                <input type="checkbox" id="toppings" name="toppings" value="2"> Pepperoni + $2<br>
+                <input type="checkbox" id="toppings" name="toppings" value="1"> Pineapple + $1<br>
+                <input type="checkbox" id="toppings" name="toppings" value="1"> Mushrooms + $1<br>
+                <hr/>
+              </div>
+            </div>
           </div>
+          <button type="submit">Amount due:</button>
+        </form>
+        <div class="result">
+        <span id="cost"></span>
         </div>
       </div>
-
-
-    </body>
+    </div>
+  </body>
+  </html>
