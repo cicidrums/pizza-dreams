@@ -22,22 +22,21 @@ $(document).ready(function() {
     $("input:checkbox[name=toppings]:checked").each(function() {
       var toppingCost = $(this).val();
       pizzaTruth.push(toppingCost);
+      console.log(pizzaTruth)
     });
 
     var size = $("#pizza-size option:selected").val();
     //console.log(size);
-    var toppingCost = parseInt($("input:checkbox[name=toppings]:checked").val());
+    var toppingCost = parseInt($("input:checkbox[name='toppings']:checked").val());
     //console.log(toppingCost);
 
     var total = parseFloat(size) + parseFloat(pizzaTruth);
-    console.log(pizzaTruth);
     var newPizza = new Pizza(size, toppingCost);
-    //console.log(newPizza);
-    //$("#result").empty();
-
 
     $("#result").text(newPizza.info());
+    //console.log(newPizza);
     $("#result").text("$" + total + ".00");
     $("#result").show();
+    //$("#result").empty();
   });
     });
