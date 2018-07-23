@@ -3,14 +3,23 @@
 function Pizza(size, toppingCost) {
   this.size = size;
   this.toppingCost = toppingCost;
+  this.price = 0;
 }
 
 //Set up Prototype
 Pizza.prototype.info = function() {
-  return "One " + this.size + " inch pie with " + this.toppingCost + " topping";
-}
-
-var pizzaTruth = [];
+  if (this.size === "15" && this.toppingCost === "0") {
+    this.price = 15;
+  } else if (this.size === "20" && this.toppingCost === "0") {
+    this.price = 20;
+  } else if (this.size === "15" && this.toppingCost ==! "2") {
+    this.price = this.price + 16;
+  } else if (this.size === "20" && this.toppingCost ==! "2") {
+    this.price = this.price + 22;
+  } else {
+    this.price = this.price + 24;
+  }
+  };
 
 //UI Logic
 $(document).ready(function() {
@@ -21,22 +30,21 @@ $(document).ready(function() {
     });
     $("input:checkbox[name=toppings]:checked").each(function() {
       var toppingCost = $(this).val();
-      pizzaTruth.push(toppingCost);
-      console.log(pizzaTruth)
     });
 
     var size = $("#pizza-size option:selected").val();
-    //console.log(size);
-    var toppingCost = parseInt($("input:checkbox[name='toppings']:checked").val());
-    //console.log(toppingCost);
-
-    var total = parseFloat(size) + parseFloat(pizzaTruth);
+    var toppings = [];
+    var toppingCost = parseInt($("input:checkbox[name=toppings]:checked").each(function() {
+    toppings.push($(this).val());
+    console.log(toppingCost);
+    var total = parseInt(size) + parseFloat(toppings);
     var newPizza = new Pizza(size, toppingCost);
 
+
+
     $("#result").text(newPizza.info());
-    //console.log(newPizza);
     $("#result").text("$" + total + ".00");
     $("#result").show();
-    //$("#result").empty();
+  }));
   });
-    });
+});
